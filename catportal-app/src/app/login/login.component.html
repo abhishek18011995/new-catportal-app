@@ -1,0 +1,44 @@
+<button type="button" class="btn btn-primary" (click)="loginModal.show()">Static modal</button>
+
+<div class="modal fade" bsModal #loginModal="bs-modal" [config]="{backdrop: 'static',show:'true',ignoreBackdropClick:'true'}"
+  tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header text-center login-modal-header">
+        <h3 class="modal-title">
+          <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>Login Here</h3>
+        <!-- <button type="button" class="close pull-right" aria-label="Close" (click)="loginModal.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button> -->
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="userId">userId</label>
+            <input type="text" id="userId" placeholder="Enter Employee Id">
+          </div>
+          <div class="form-group">
+            <label for="userPassword">Password</label>
+            <input type="password" class="form-control" id="userPassword" placeholder="Enter Password">
+          </div>
+          <button type="submit" class="btn btn-default">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 
+<button type="button" class="btn btn-primary" (click)="openModal(template)">Create template modal</button>
+ 
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    This is a modal.
+  </div>
+</ng-template> -->
