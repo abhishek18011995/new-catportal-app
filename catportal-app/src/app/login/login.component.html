@@ -1,9 +1,9 @@
-<button type="button" class="btn btn-primary" (click)="loginModal.show()">Static modal</button>
+<!-- <button type="button" class="btn btn-primary" (click)="loginModal.show()">Static modal</button> -->
 
 <div class="modal fade" bsModal #loginModal="bs-modal" [config]="{backdrop: 'static',show:'true',ignoreBackdropClick:'true'}"
   tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content">
+    <div class="modal-content login-modal">
       <div class="modal-header text-center login-modal-header">
         <h3 class="modal-title">
           <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>Login Here</h3>
@@ -11,18 +11,35 @@
           <span aria-hidden="true">&times;</span>
         </button> -->
       </div>
-      <div class="modal-body">
-        <form>
+      <div class="alert alert-info" *ngIf="(emptyLoginDetail && loginClicked)">
+        <strong>Information!</strong> UserName / ID Or Password not Entered !!
+      </div>
+      <div class="alert alert-danger" *ngIf="(incorrectLoginDetail && loginClicked)">
+        <strong>Caution!</strong> UserName / ID Or Password Entered is Incorrect!!
+      </div>
+      <div class="modal-body login-modal-body">
+        <form [formGroup]="loginDetail">
           <div class="form-group">
-            <label for="userId">userId</label>
-            <input type="text" id="userId" placeholder="Enter Employee Id">
+            <label for="userId">User Id</label>
+            <input type="text" class="form-control" id="userId" formControlName="userId" placeholder="Enter Employee Id">
           </div>
           <div class="form-group">
             <label for="userPassword">Password</label>
-            <input type="password" class="form-control" id="userPassword" placeholder="Enter Password">
+            <input type="password" class="form-control" id="userPassword" formControlName="password" placeholder="Enter Password">
           </div>
-          <button type="submit" class="btn btn-default">Login</button>
+          <div class="checkbox login-remember">
+            <label>
+              <input value="" checked type="checkbox">Remember me</label>
+          </div>
+          <button type="button" class="btn btn-success btn-block" (click)="onLogin()" data-toggle="tooltip" data-placement="top" title="Login Here!">
+            <span class="glyphicon glyphicon-off"></span> Login </button>
         </form>
+      </div>
+      <div class="modal-footer">
+        <p>Forgot
+          <a href="#" title="Please consult Administrator or ask peer to unlock account" data-content="Please consult Administrator or ask peer to unlock account">Password?</a>
+        </p>
+        <!-- <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">{{closeBtnName}}</button> -->
       </div>
     </div>
   </div>

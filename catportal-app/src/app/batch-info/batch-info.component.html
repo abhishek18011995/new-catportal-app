@@ -1,0 +1,20 @@
+<!-- batch information -->
+<h1 class="text-center">Batch Information</h1>
+<h3 class="text-center" *ngIf="batchInfo"><mark>Number of Associates : {{batchInfo.length}}</mark></h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Employee_Name</th>
+            <th>Employee_Id</th>
+            <th>Batch_Code</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let batch of batchInfo">
+            <td>{{batch?.userName}}</td>
+            <td>{{batch?.id}}</td>
+            <td>{{batch?.batchCode}}</td>
+        </tr>
+    </tbody>
+</table>
+<h4 class="back"><a [routerLink]="['/home']"><span class="glyphicon glyphicon-circle-arrow-left black"></span>&nbsp;Back</a></h4>

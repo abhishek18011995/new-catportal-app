@@ -1,0 +1,40 @@
+<div class="container">
+  <h2 class="text-center">CAT Details</h2>
+  <div class="jumbotron">
+      <div>
+          <div class="row" id="jumborow">
+              <!-- div shows user details -->
+              <div class="col-md-6" id="jumbocol">
+                  <h2>Trainee Details</h2>
+                  <p>
+                      <label>Employee Name-</label>&nbsp;{{userDetails?.userName}}</p>
+                  <p>
+                      <label>Employee Id-</label>&nbsp;{{userDetails?.id}}</p>
+                  <p>
+                      <label>Batch-</label>&nbsp;<a href="#/batchInfo">{{userDetails?.batchCode}}</a>
+                  </p>
+                  <p>
+                      <label>Date Of Joining-</label>&nbsp;{{userDetails?.dateOfJoining}}</p>
+                  <p>
+                      <label>Batch Owner-</label>&nbsp;{{userDetails?.batchOwner}}</p>
+                  <p>
+                      <label>Location-</label>&nbsp;{{userDetails?.location}}</p>
+              </div>
+              <!-- div show trainer details -->
+              <div class="col-md-6" id="trainerdiv">
+                  <div>
+                      <h2>Trainer Details</h2>
+                      <p>
+                          <label>Trainer Id-</label>&nbsp;{{trainerDetails?.trainerId}}</p>
+                      <p>
+                          <label>Trainer Name-</label>&nbsp;{{trainerDetails?.trainerName}}</p>
+                      <p>
+                          <label>Trainer Subject-</label>&nbsp;{{trainerDetails?.courseName}}</p>
+                      <p>
+                          <label>Trainer Designation-</label>&nbsp;{{trainerDetails?.designation}}</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

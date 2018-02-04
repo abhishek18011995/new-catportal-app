@@ -1,0 +1,22 @@
+<h2 class="text-center">The Training Schedule</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Course Name</th>
+            <th>Course Code</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let course of trainingDetails">
+            <td>{{course?.sl}}</td>
+            <td>{{course?.courseName}}</td>
+            <td><a [routerLink]="['/courseDetails/:courseCode']">{{course?.courseCode}}</a>
+            </td>
+            <td>{{course?.startDate}}</td>
+            <td>{{course?.endDate}}</td>
+        </tr>
+    </tbody>
+</table>
